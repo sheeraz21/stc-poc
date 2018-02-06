@@ -7,7 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<s:include value="/pages/script.jsp"></s:include>
+ <s:include value="/pages/script.jsp"></s:include> 
+
+
 </head>
 <body>
 	<div class="wrapper">
@@ -34,34 +36,13 @@
 									</div>
 									<div class="content">
 										<s:form action="login" theme="simple">
-										
-											 <!-- <div class="row"> -->
-												
-												
-													<!-- <div class="form-group"> -->
-													<!-- <label>User Name</label> -->
-													<th><s:text name="User Name"/></th>
-														<s:textfield name="" cssClass="form-control border-input"
-															value="" ></s:textfield>&nbsp;
-															
-										
-													<!-- </div> -->
-													
-												
-											<!-- </div> -->   &nbsp;&nbsp;
-											
-											<!-- <div class="row"> -->
-										<!-- 		<div class="col-md-2">
-													<div class="form-group"> -->
-													
-														<s:textfield name="" cssClass="form-control border-input"
-															value="" label="Password"></s:textfield>
-											<!-- 		</div>
-												</div> -->
-											<!--  </div> --> &nbsp;&nbsp;
-											<!-- <div class="text-center"> -->
-												<s:submit cssClass="btn btn-info btn-fill btn-wd"></s:submit>
-											<!-- </div> -->
+														<s:textfield name="employeeUIBean.userName" cssClass="form-control border-input"
+															value="%{employee.userName}" placeholder="User Name" ></s:textfield>&nbsp;&nbsp;&nbsp;
+														<s:password name="employeeUIBean.password" cssClass="form-control border-input"
+															value="%{employee.password}" placeholder="Password"/>&nbsp;&nbsp;
+											 <div class="text-center">&nbsp;&nbsp;
+												<s:submit cssClass="btn btn-info btn-fill btn-wd" value="Sign In"></s:submit>&nbsp;&nbsp;
+											 </div> 
 
 
 

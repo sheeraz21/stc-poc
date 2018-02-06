@@ -63,8 +63,42 @@ public class Employee implements Serializable {
 	@Column(name="Gender")
 	private String gender;
 	
+	@Column(name="UserName")
+	private String userName;
+	
+	@Column(name="Password")
+	private String password;
 	
 	
+	
+
+	/**
+	 * @return the userName
+	 */
+	public String getUserName() {
+		return userName;
+	}
+
+	/**
+	 * @param userName the userName to set
+	 */
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	/**
 	 * @return the empId
@@ -290,23 +324,6 @@ public class Employee implements Serializable {
 		this.gender = gender;
 	}
 
-	/**
-	 * @return the serialversionuid
-	 */
-	
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Employee [empId=" + empId + ", firstName=" + firstName + ", lastName=" + lastName + ", address="
-				+ address + ", city=" + city + ", country=" + country + ", departmentName=" + departmentName
-				+ ", designation=" + designation + ", role=" + role + ", salary=" + salary + ", noOfExp=" + noOfExp
-				+ ", baseLocation=" + baseLocation + ", officeCity=" + officeCity + ", email=" + email
-				+ ", mobileNumber=" + mobileNumber + ", gender=" + gender + "]";
-	}
-
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
@@ -328,8 +345,10 @@ public class Employee implements Serializable {
 		result = prime * result + ((mobileNumber == null) ? 0 : mobileNumber.hashCode());
 		result = prime * result + ((noOfExp == null) ? 0 : noOfExp.hashCode());
 		result = prime * result + ((officeCity == null) ? 0 : officeCity.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((role == null) ? 0 : role.hashCode());
 		result = prime * result + ((salary == null) ? 0 : salary.hashCode());
+		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		return result;
 	}
 
@@ -415,6 +434,11 @@ public class Employee implements Serializable {
 				return false;
 		} else if (!officeCity.equals(other.officeCity))
 			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
 		if (role == null) {
 			if (other.role != null)
 				return false;
@@ -425,8 +449,28 @@ public class Employee implements Serializable {
 				return false;
 		} else if (!salary.equals(other.salary))
 			return false;
+		if (userName == null) {
+			if (other.userName != null)
+				return false;
+		} else if (!userName.equals(other.userName))
+			return false;
 		return true;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", firstName=" + firstName + ", lastName=" + lastName + ", address="
+				+ address + ", city=" + city + ", country=" + country + ", departmentName=" + departmentName
+				+ ", designation=" + designation + ", role=" + role + ", salary=" + salary + ", noOfExp=" + noOfExp
+				+ ", baseLocation=" + baseLocation + ", officeCity=" + officeCity + ", email=" + email
+				+ ", mobileNumber=" + mobileNumber + ", gender=" + gender + ", userName=" + userName + ", password="
+				+ password + "]";
+	}
+
+	
 	
 	
 }
