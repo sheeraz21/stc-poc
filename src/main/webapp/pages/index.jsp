@@ -5,36 +5,53 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
- <s:include value="/pages/script.jsp"></s:include> 
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../img/favicon.png">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>Login</title>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<meta name="viewport" content="width=device-width" />
+<s:if test="hasActionErrors()">
+<script type="text/javascript" src="../js/bootstrap-checkbox-radio.js"></script>
+<script type="text/javascript" src="../js/bootstrap-notify.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/chartist.min.js"></script>
+<script type="text/javascript" src="../js/demo.js"></script>
+<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../js/paper-dashboard.js"></script>
+<script type="text/javascript" src="../js/highchart.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/animate.min.css"> 
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">  
+<link rel="stylesheet" type="text/css" href="../css/demo.css">  
+<link rel="stylesheet" type="text/css" href="../css/animate.min.css">  
+<link rel="stylesheet" type="text/css" href="../css/paper-dashboard.css">  
+<link rel="stylesheet" type="text/css" href="../css/themify-icons.css">  
+</s:if>
+<s:else>
+<s:include value="/pages/script.jsp"></s:include> 
+</s:else>
+<style type="text/css">
+.errorMessage {
+	color:red;
 
+}
 
+</style>
 </head>
 <body>
 	<div class="wrapper">
-		<div class="sidebar">
-			<div class="sidebar-wrapper">
-				<div class="logo">
-					<a href="#" class="simple-text">Creative Tim</a>
-				</div>
-			</div>
-		</div>
-
 		<div class="main-panel">
 			<div class="container-fluid">
 				<div class="content">
 					<div class="container-fluid">
 						<div class="row">
-
-
-
 							<div class="col-lg-8 col-md-7">
 								<div class="card">
 									<div class="header">
 										<h4 class="title">Sign In</h4>
 									</div>
 									<div class="content">
+									<s:actionerror/>
 										<s:form action="login" theme="simple">
 														<s:textfield name="employeeUIBean.userName" cssClass="form-control border-input"
 															value="%{employee.userName}" placeholder="User Name" ></s:textfield>&nbsp;&nbsp;&nbsp;
