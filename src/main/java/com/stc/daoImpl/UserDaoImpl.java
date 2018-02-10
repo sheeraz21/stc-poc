@@ -10,6 +10,7 @@ import org.hibernate.Transaction;
 import com.stc.dao.IUserDao;
 import com.stc.entity.Employee;
 import com.stc.entity.EmployeeUIBean;
+import com.stc.entity.UserEntity;
 
 public class UserDaoImpl implements IUserDao{
 	
@@ -61,6 +62,7 @@ public class UserDaoImpl implements IUserDao{
 		List<Employee> employeelst=null;
 		String userName=employeeUIBean.getUserName();
 		try{
+			
 			String hql = "from  Employee as upe WHERE upe.userName ='"+userName+"'";
 			 Session session = com.stc.util.HibernateUtil.getSession();
 			 session.beginTransaction();
@@ -87,6 +89,22 @@ public class UserDaoImpl implements IUserDao{
 		}
 		return employee;
 	
+	}
+
+
+
+	public List<UserEntity> getUserDetails() {
+		 Session session = com.stc.util.HibernateUtil.getSession();
+		 UserEntity userEntity=new UserEntity();
+			
+			List<UserEntity> courses = null;
+			try {
+				courses = session.createQuery("from UserEntity").list();
+				courses.add(userEntity);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} 
+			return courses;
 	}
 	
 	

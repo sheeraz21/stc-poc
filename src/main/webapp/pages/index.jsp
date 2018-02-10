@@ -11,7 +11,9 @@
 <title>Login</title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <meta name="viewport" content="width=device-width" />
-<s:if test="hasActionErrors()">
+
+
+<%-- <s:if test="hasActionErrors()">
 <script type="text/javascript" src="../js/bootstrap-checkbox-radio.js"></script>
 <script type="text/javascript" src="../js/bootstrap-notify.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
@@ -26,9 +28,9 @@
 <link rel="stylesheet" type="text/css" href="../css/animate.min.css">  
 <link rel="stylesheet" type="text/css" href="../css/paper-dashboard.css">  
 <link rel="stylesheet" type="text/css" href="../css/themify-icons.css">  
-</s:if>
-<s:else>
-<s:include value="/pages/script.jsp"></s:include> 
+</s:if> --%>
+<%-- <s:else>
+
 </s:else>
 <style type="text/css">
 .errorMessage {
@@ -36,7 +38,8 @@
 
 }
 
-</style>
+</style> --%>
+<s:include value="/pages/script.jsp"></s:include> 
 </head>
 <body>
 	<div class="wrapper">
@@ -58,7 +61,7 @@
 														<s:password name="employeeUIBean.password" cssClass="form-control border-input"
 															value="%{employee.password}" placeholder="Password"/>&nbsp;&nbsp;
 											 <div class="text-center">&nbsp;&nbsp;
-												<s:submit cssClass="btn btn-info btn-fill btn-wd" value="Sign In"></s:submit>&nbsp;&nbsp;
+												<s:submit cssClass="btn btn-info btn-fill btn-wd"  id="btnSubmit" value="Sign In"></s:submit>&nbsp;&nbsp;
 											 </div> 
 
 

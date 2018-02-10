@@ -22,6 +22,8 @@
 <script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="../js/paper-dashboard.js"></script>
 <script type="text/javascript" src="../js/highchart.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>  
+
 
 <script type="text/javascript">
     	$(document).ready(function(){
@@ -39,6 +41,33 @@
 
     	});
 	</script>
+	
+	
+	 <script type="text/javascript">
+        
+          
+        </script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 <link rel="stylesheet" type="text/css" href="../css/animate.min.css"> 
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">  
@@ -90,9 +119,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
+                    <a href="reports.action">
                         <i class="ti-text"></i>
-                        <p>Typography</p>
+                        <p>Reports</p>
                     </a>
                 </li>
                 <li>
@@ -284,6 +313,7 @@
                                 <p class="category">24 Hours performance</p>
                             </div>
                             <div class="content">
+                            <div id="population" style="float: left;"></div>
                                 <div id="chartHours" class="ct-chart"></div>
                                 <div class="footer">
                                     <div class="chart-legend">

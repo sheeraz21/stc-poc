@@ -14,5 +14,6 @@
 		<property name="show_sql">true</property>
 		
 		<mapping class="com.stc.entity.Employee" />
+		<mapping class="com.stc.entity.UserEntity" />
 	</session-factory>
 </hibernate-configuration>

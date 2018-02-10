@@ -11,6 +11,7 @@
 <script type="text/javascript" src="js/chartist.min.js"></script>
 <script type="text/javascript" src="js/demo.js"></script>
 
+
 <script type="text/javascript" src="js/paper-dashboard.js"></script>
 <script type="text/javascript" src="js/highchart.js"></script>
 
@@ -19,7 +20,8 @@
 <link rel="stylesheet" type="text/css" href="css/demo.css">  
 <link rel="stylesheet" type="text/css" href="css/animate.min.css">  
 <link rel="stylesheet" type="text/css" href="css/paper-dashboard.css">  
-<link rel="stylesheet" type="text/css" href="css/themify-icons.css">   
+<link rel="stylesheet" type="text/css" href="css/themify-icons.css"> 
+<script type="text/javascript" src="js/script.js"></script>  
 
 
 

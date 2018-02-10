@@ -5,11 +5,33 @@
 <struts>
    <constant name = "struts.devMode" value = "true" />
    <package name="default" extends="struts-default">  
+   
+   
+       <result-types>
+            <result-type name="jasper1" class="com.stc.actions.LoadJasperReportAction"/>
+       </result-types>
       
        <action name = "login" class = "com.stc.actions.UserAction" method ="loginUser">
          <result name = "success">/pages/dashboard.jsp</result>
          <result name="error">/pages/index.jsp</result>
        </action>
+       
+       
+        <action name = "reports" class = "com.stc.actions.UserAction" method ="generateReports">
+         <result name = "success">/pages/reports.jsp</result>
+         <result name="error">/pages/dashboard.jsp</result>
+       </action>
+       
+       
+ 
+ 
+       <action name="jasperTest" class="com.stc.actions.JasperAction">
+        <result name="success" type="jasper1">
+            <param name="parameters">param</param>
+            <param name="rptFormat">rptFmt</param>
+        </result>
+        </action>
+       
       
       
    </package>

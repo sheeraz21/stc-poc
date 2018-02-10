@@ -1,8 +1,14 @@
 package com.stc.actions;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.stc.entity.Employee;
 import com.stc.entity.EmployeeUIBean;
+import com.stc.entity.UserEntity;
 import com.stc.service.UserService;
 
 public class UserAction extends ActionSupport {
@@ -13,7 +19,10 @@ public class UserAction extends ActionSupport {
 	Employee employee = new Employee();
 	EmployeeUIBean employeeUIBean = new EmployeeUIBean();
 	UserService userService = new UserService();
+	List<UserEntity> listUserEntity=new ArrayList<UserEntity>();
 	Boolean userFlag;
+
+
 
 	public String loginUser() {
 		if ((employeeUIBean.getUserName().equals("") && employeeUIBean.getUserName() == null)
@@ -26,10 +35,33 @@ public class UserAction extends ActionSupport {
 				addActionError("Invalid Credential");
 				return ERROR;
 			}
+			listUserEntity= userService.getUserDetails();
+
 		}
 		return SUCCESS;
 	}
+	
+	public String generateReports(){
+		return SUCCESS;
+	}
+	
+	
+	
+	
+	
+	/**
+	 * @return the listUserEntity
+	 */
+	public List<UserEntity> getListUserEntity() {
+		return listUserEntity;
+	}
 
+	/**
+	 * @param listUserEntity the listUserEntity to set
+	 */
+	public void setListUserEntity(List<UserEntity> listUserEntity) {
+		this.listUserEntity = listUserEntity;
+	}
 	/**
 	 * @return the employee
 	 */
