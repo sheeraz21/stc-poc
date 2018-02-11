@@ -35,9 +35,15 @@ public class UserAction extends ActionSupport {
 				addActionError("Invalid Credential");
 				return ERROR;
 			}
-			listUserEntity= userService.getUserDetails();
+			
 
 		}
+		return SUCCESS;
+	}
+	
+	public String highChart(){
+		listUserEntity= userService.getUserDetails();
+		
 		return SUCCESS;
 	}
 	

@@ -4,7 +4,7 @@
    "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
    <constant name = "struts.devMode" value = "true" />
-   <package name="default" extends="struts-default">  
+   <package name="default" namespace="/" extends="json-default">  
    
    
        <result-types>
@@ -17,12 +17,54 @@
        </action>
        
        
+       <action name = "highChart" class = "com.stc.actions.UserAction" method ="highChart">
+         <result name = "success" type="json"></result> <!-- /pages/dashboard.jsp  -->
+         <result name="error">/pages/index.jsp</result>
+       </action>
+       
+       
+       <action name = "dashboard" class = "com.stc.actions.UserAction" >
+         <result name = "success">/pages/dashboard.jsp</result>
+         <result name="error">/pages/index.jsp</result>
+       </action>
+       
+       <action name = "user" class = "com.stc.actions.UserAction" >
+         <result name = "success">/pages/dashboard.jsp</result>
+         <result name="error">/pages/index.jsp</result>
+       </action>
+       
+       
+       <action name = "table" class = "com.stc.actions.UserAction" >
+         <result name = "success">/pages/dashboard.jsp</result>
+         <result name="error">/pages/index.jsp</result>
+       </action>
+       
+       
+       
         <action name = "reports" class = "com.stc.actions.UserAction" method ="generateReports">
          <result name = "success">/pages/reports.jsp</result>
          <result name="error">/pages/dashboard.jsp</result>
        </action>
        
+              <action name = "icons" class = "com.stc.actions.UserAction" >
+         <result name = "success">/pages/dashboard.jsp</result>
+         <result name="error">/pages/index.jsp</result>
+       </action>
        
+              <action name = "maps" class = "com.stc.actions.UserAction" >
+         <result name = "success">/pages/dashboard.jsp</result>
+         <result name="error">/pages/index.jsp</result>
+       </action>
+       
+              <action name = "notifications" class = "com.stc.actions.UserAction" >
+         <result name = "success">/pages/dashboard.jsp</result>
+         <result name="error">/pages/index.jsp</result>
+       </action>
+       
+              <action name = "upgrade" class = "com.stc.actions.UserAction" >
+         <result name = "success">/pages/dashboard.jsp</result>
+         <result name="error">/pages/index.jsp</result>
+       </action>
  
  
        <action name="jasperTest" class="com.stc.actions.JasperAction">

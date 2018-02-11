@@ -13,32 +13,14 @@
 <meta name="viewport" content="width=device-width" />
 
 
-<%-- <s:if test="hasActionErrors()">
-<script type="text/javascript" src="../js/bootstrap-checkbox-radio.js"></script>
-<script type="text/javascript" src="../js/bootstrap-notify.js"></script>
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/chartist.min.js"></script>
-<script type="text/javascript" src="../js/demo.js"></script>
-<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
-<script type="text/javascript" src="../js/paper-dashboard.js"></script>
-<script type="text/javascript" src="../js/highchart.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/animate.min.css"> 
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">  
-<link rel="stylesheet" type="text/css" href="../css/demo.css">  
-<link rel="stylesheet" type="text/css" href="../css/animate.min.css">  
-<link rel="stylesheet" type="text/css" href="../css/paper-dashboard.css">  
-<link rel="stylesheet" type="text/css" href="../css/themify-icons.css">  
-</s:if> --%>
-<%-- <s:else>
 
-</s:else>
 <style type="text/css">
 .errorMessage {
 	color:red;
 
 }
 
-</style> --%>
+</style>
 <s:include value="/pages/script.jsp"></s:include> 
 </head>
 <body>

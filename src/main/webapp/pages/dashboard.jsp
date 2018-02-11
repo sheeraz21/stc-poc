@@ -12,9 +12,9 @@
 
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-<%--  <s:include value="/pages/script.jsp"></s:include>  --%>
+ <s:include value="/pages/script.jsp"></s:include>  
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<script type="text/javascript" src="../js/bootstrap-checkbox-radio.js"></script>
+<%-- <script type="text/javascript" src="../js/bootstrap-checkbox-radio.js"></script>
 <script type="text/javascript" src="../js/bootstrap-notify.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/chartist.min.js"></script>
@@ -22,7 +22,70 @@
 <script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="../js/paper-dashboard.js"></script>
 <script type="text/javascript" src="../js/highchart.js"></script>
-<script type="text/javascript" src="../js/script.js"></script>  
+<script type="text/javascript" src="../js/script.js"></script>   --%>
+<%--  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script> --%>
+<script type="text/javascript">
+$(document).ready(function () {
+	
+    var populationDataArray = [];
+    
+    $.getJSON("highChart.action", function (data) {
+    	
+        $.each(data.listUserEntity, function (index) {
+        	
+            populationDataArray[index] = ['' + this.stateName + '', this.statePopulation];
+            
+        });
+
+        var chart = {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        };
+
+        var title = {
+            text: 'State Population Report (Pie Chart)'
+        };
+
+        var tooltip = {
+            pointFormat: '{series.name}: <b>{point.y}</b>'
+        };
+
+        var plotOptions = {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.y}',
+                    style: {
+                        fontSize: 10,
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        };
+
+        var series = [{
+                type: 'pie',
+                name: 'State Population',
+                data: populationDataArray
+            }];
+
+        var json = {};
+        json.chart = chart;
+        json.title = title;
+        json.tooltip = tooltip;
+        json.series = series;
+        json.plotOptions = plotOptions;
+        $('#population').highcharts(json);
+    });
+});
+</script>
+
+
+
 
 
 <script type="text/javascript">
@@ -32,7 +95,7 @@
 
         	$.notify({
             	icon: 'ti-gift',
-            	message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
+            	message: "Your are successfully to <b> Dashboard</b> - A User Data Dash Board Application."
 
             },{
                 type: 'success',
@@ -69,7 +132,7 @@
 	
 	
 
-<link rel="stylesheet" type="text/css" href="../css/animate.min.css"> 
+<!-- <link rel="stylesheet" type="text/css" href="../css/animate.min.css"> 
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">  
 <link rel="stylesheet" type="text/css" href="../css/demo.css">  
 <link rel="stylesheet" type="text/css" href="../css/animate.min.css">  
@@ -77,7 +140,7 @@
 <link rel="stylesheet" type="text/css" href="../css/themify-icons.css"> 
 
    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'> -->
 
 
 
@@ -101,19 +164,19 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="dashboard.action">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
+                    <a href="user.action">
                         <i class="ti-user"></i>
                         <p>User Profile</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="table.action">
                         <i class="ti-view-list-alt"></i>
                         <p>Table List</p>
                     </a>
@@ -125,25 +188,25 @@
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
+                    <a href="icons.action">
                         <i class="ti-pencil-alt2"></i>
                         <p>Icons</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="maps.action">
                         <i class="ti-map"></i>
                         <p>Maps</p>
                     </a>
                 </li>
                 <li>
-                    <a href="notifications.html">
+                    <a href="notifications.action">
                         <i class="ti-bell"></i>
                         <p>Notifications</p>
                     </a>
                 </li>
 				<li class="active-pro">
-                    <a href="upgrade.html">
+                    <a href="upgrade.action">
                         <i class="ti-export"></i>
                         <p>Upgrade to PRO</p>
                     </a>
@@ -313,19 +376,19 @@
                                 <p class="category">24 Hours performance</p>
                             </div>
                             <div class="content">
-                            <div id="population" style="float: left;"></div>
-                                <div id="chartHours" class="ct-chart"></div>
-                                <div class="footer">
+                            <div id="population" style="float: center;"></div>
+                               <!--  <div id="chartHours" class="ct-chart"></div> -->
+                               <!--  <div class="footer">
                                     <div class="chart-legend">
                                         <i class="fa fa-circle text-info"></i> Open
                                         <i class="fa fa-circle text-danger"></i> Click
                                         <i class="fa fa-circle text-warning"></i> Click Second Time
-                                    </div>
+                                    </div> -->
                                     <hr>
-                                    <div class="stats">
+                                  <!--   <div class="stats">
                                         <i class="ti-reload"></i> Updated 3 minutes ago
-                                    </div>
-                                </div>
+                                    </div> -->
+                                </div> 
                             </div>
                         </div>
                     </div>

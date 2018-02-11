@@ -2,8 +2,8 @@
             	
 	           alert("HIIIIIIIIIIIIIIIIIIIII");
                 var populationDataArray = [];
-                $("#btnSubmit").button().click(function(){
-           /*    $.getJSON('.sign', function (data) {*/
+              // $("#btnSubmit").button().click(function(){
+               $.getJSON("#highChart.action", function (data) {
           
                 	
                 	  alert("HIIIIIIIIIIIIIIIIIIIII222222222222222222222");
@@ -58,4 +58,5 @@
                     $('#population').highcharts(json);
                 });
                
-            });
+            //});
+  });

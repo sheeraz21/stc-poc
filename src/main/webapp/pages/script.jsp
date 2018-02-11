@@ -21,7 +21,7 @@
 <link rel="stylesheet" type="text/css" href="css/animate.min.css">  
 <link rel="stylesheet" type="text/css" href="css/paper-dashboard.css">  
 <link rel="stylesheet" type="text/css" href="css/themify-icons.css"> 
-<script type="text/javascript" src="js/script.js"></script>  
+<%-- <script type="text/javascript" src="js/script.js"></script>  --%> 
 
 
 

@@ -12,8 +12,8 @@
 
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-<%--  <s:include value="/pages/script.jsp"></s:include>  --%>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+ <s:include value="/pages/script.jsp"></s:include> 
+<%-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <script type="text/javascript" src="../js/bootstrap-checkbox-radio.js"></script>
 <script type="text/javascript" src="../js/bootstrap-notify.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
@@ -32,7 +32,7 @@
 <link rel="stylesheet" type="text/css" href="../css/themify-icons.css"> 
 
    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'> --%>
 </head>
 <body>
 	<div class="wrapper">
